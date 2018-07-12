@@ -25,3 +25,5 @@ restart-occs:
         occs_password: $OCCS_PASSWORD
         occs_user: $OCCS_USER
         rest_server_url: $REST_SERVER_URL
+        docker_image_name: $DOCKER_IMAGE_NAME
+        debug: $DEBUG
