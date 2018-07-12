@@ -19,7 +19,7 @@ push:
 restart-occs: 
   steps: 
     - 
-      peternagy/oracle-occs-container-util: 
+      peternagy/oracle-occs-container-util@1.0.0: 
         deployment_name: $DEPLOYMENT_NAME
         function: $FUNCTION
         occs_password: $OCCS_PASSWORD
