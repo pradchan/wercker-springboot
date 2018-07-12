@@ -51,6 +51,8 @@
       <div>
               <br>SpringBoot application demo. Current server time: <%= new java.util.Date() %> <br>
               <br>
+              <H1>This is due to code push auto build</<H1>
+              <br>
               <p>
                 <span style="color: #333; text-decoration: none">Build faster and release often with Wercker's Docker-Native 
           continuous integration platform for developing, building and delivering your applications.</span>
