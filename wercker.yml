@@ -1,26 +1,27 @@
+--- 
 box: combient/java-mvn
-build:
-  steps:
-    # Build Spring Boot Sample application
-    - script:
-        name: Maven install
-        code: mvn install
-push:
-  steps:
-    # Push to public docker repo
-    - internal/docker-push:
-        username: $DOCKER_USERNAME
+build: 
+  steps: 
+    - 
+      script: 
+        code: "mvn install"
+        name: "Maven install"
+push: 
+  steps: 
+    - 
+      internal/docker-push: 
+        cmd: "java -jar  /pipeline/source/target/springbootdemo-0.0.1.war"
         password: $DOCKER_PASSWORD
-        tag: latest
+        registry: "https://index.docker.io/v1/"
         repository: $DOCKER_REPOSITORY
-        registry: https://index.docker.io/v1/
-        cmd: java -jar  /pipeline/source/target/springbootdemo-0.0.1.war
-restart-occs:
-  steps:
-    # Manage Oracle Container Cloud Service container
-    - peternagy/oracle-occs-container-util:
-        occs_user: $OCCS_USER
-        occs_password: $OCCS_PASSWORD
-        rest_server_url: $REST_SERVER_URL
+        tag: latest
+        username: $DOCKER_USERNAME
+restart-occs: 
+  steps: 
+    - 
+      peternagy/oracle-occs-container-util: 
+        deployment_name: $DEPLOYMENT_NAME
         function: $FUNCTION
-          deployment_name: $DEPLOYMENT_NAME
+        occs_password: $OCCS_PASSWORD
+        occs_user: $OCCS_USER
+        rest_server_url: $REST_SERVER_URL
