@@ -22,7 +22,7 @@ restart-occs:
       peternagy/oracle-occs-container-util@1.0.0: 
         deployment_name: $DEPLOYMENT_NAME
         function: $FUNCTION
-        occs_password: $OCCS_PASSWORD
+        occs_password: "aCerb@7ScaLING"
         occs_user: $OCCS_USER
         rest_server_url: $REST_SERVER_URL
         docker_image_name: $DOCKER_IMAGE_NAME
